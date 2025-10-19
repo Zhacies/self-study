@@ -8,21 +8,33 @@
 
 
 <body>
+<div class="radio-container">
 
-<input type="radio" name="name" value="airus">
-<input type="radio" name= "name" value="abraham">
+</div>
 
 
 <script>
+function html() {
+  let radio = ['abraham', 'airus'];
+  let hey = '';
 
-const radioElement = document.querySelectorAll('input[name ="name"]');
-
-radioElement.forEach(radio=>{
-  radio.addEventListener('click',()=>{
-    console.log('hello');
-    console.log('selected value', radio.value);
+  // Loop through each item and create one radio button per name
+  radio.forEach((item) => {
+    hey += `
+      <label>
+        <input type="radio" name="name" value="${item}">
+        ${item}
+      </label><br>`;
   });
-});
+
+  // Inject the HTML into the page
+  document.querySelector('.radio-container').innerHTML = hey;
+}
+
+html();
+
+
+
 
 /*
 document.querySelectorAll('input[name="name"]:checked')
