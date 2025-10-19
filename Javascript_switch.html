@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<input class="js-input-char" placeholder="input A-E ">
+<button class="hey" onclick="choice()">click me</button>
+
+
+  <script>
+   const inputElement = document.querySelector('.js-input-char');
+   
+   
+
+    function choice(){
+    let up = inputElement.value;
+    const uppercase = up.toUpperCase(); // USING METHOD 
+      switch (uppercase) {
+        case "A":
+            console.log("A -> very good"); // so basically if you  enter a it will print 'A'
+            break;
+        case "B":
+            console.log("B -> Good, keep learning");
+            break;
+        case "C":
+            console.log("C -> Need Improvement");
+            break;
+        case "D":
+            console.log('hello, world');
+            break;
+        case "E":
+            console.log("Not Good");
+            break;
+        default:
+            console.log("Invalid Grade");
+      }
+     inputElement.value = '';
+   }
+  </script>
+</body>
+</html>

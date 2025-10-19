@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selection Demo</title>
+<style>
+.spacer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+  background: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  opacity: 0;
+  transform: translateX(60px);
+  transition: 2s ease-out;
+}
+
+.box.visible {
+  opacity: 1;
+  transform: translateX(200px);
+}
+
+
+
+</style>
+</head>
+<body>
+<section class="spacer">Scroll down 👇</section>
+
+<div class="box animate-on-scroll">I fade in</div>
+
+<section class="spacer">Keep scrolling...</section>
+
+
+<script>
+function fadeInOutOnScroll(selector) {
+  const elements = document.querySelectorAll(selector);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");   // fade in
+      } else {
+        entry.target.classList.remove("visible"); // fade out
+      }
+    });
+  }, {
+    threshold: 0.1 // trigger when 10% of element is visible
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// Call the function
+fadeInOutOnScroll(".animate-on-scroll");
+</script>
+</body>
+</html>

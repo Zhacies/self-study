@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<body>
+
+<input type="radio" name="name" value="airus">
+<input type="radio" name= "name" value="abraham">
+
+
+<script>
+
+const radioElement = document.querySelectorAll('input[name ="name"]');
+
+radioElement.forEach(radio=>{
+  radio.addEventListener('click',()=>{
+    console.log('hello');
+    console.log('selected value', radio.value);
+  });
+});
+
+/*
+document.querySelectorAll('input[name="name"]:checked')
+
+it will only select the inputs that are already checked at the moment the code runs.
+
+
+When the page first loads → none are checked → it returns an empty NodeList.
+
+That means .forEach() has nothing to loop through, 
+so your event listener never gets added.
+*/
+
+
+
+</script>  
+</body>
+</html>
