@@ -6,6 +6,49 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+
+  </div>
+
+  <script>
+const selectElement = document.querySelector('.container');
+
+function render(){
+let hello = '';
+const hey = [{
+  fruit: 'apple',
+  fruit2: 'banana',
+  fruit3: 'watermelon'
+}];
+
+hey.forEach(element => {
+  hello += `  
+  <select class="js-select" >
+    <option value="${element.fruit}">apple</option>
+    <option value="${element.fruit2}">Banana</option>
+    <option value="${element.fruit3}">Watermelon</option>
+  </select>
   
+<input list="fruits" id="fruit" name="fruit">
+
+<datalist id="fruits">
+  <option value="Apple">
+  <option value="Banana">
+  <option value="Mango">
+  <option value="Watermelon">
+</datalist>
+`
+console.log(element.fruit);
+});
+
+selectElement.innerHTML= hello;
+}
+render();
+
+
+</script>
+
 </body>
+
+
 </html>
