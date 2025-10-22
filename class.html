@@ -11,13 +11,21 @@
     // setup a class first likt this 
     class product{
       // then put some product information like object slight diff
-      id;  
+      id; 
       image;
       name;
       price;
       //instead of ':' use semicolon
 
-      
+      constructor(info){
+        this.id = info.id; // will get the id outside of constructor
+        this.name = info.name; // same here 
+
+        /* then information will reassign new data which
+          is inside of new product parameter id:1234 and name: ball
+        */
+      }
+
     }
     const product1  = new product(
       {id:1234,
@@ -37,7 +45,7 @@
     )
 
     console.log(product1);
-    console.log(color);
+    console.log(color.color);
 
 
   </script>
