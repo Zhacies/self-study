@@ -21,8 +21,11 @@
         this.id = info.id; // will get the id outside of constructor
         this.name = info.name; // same here 
 
-        /* then information will reassign new data which
-          is inside of new product parameter id:1234 and name: ball
+        /* this.id came from  
+          const product1  = new product(
+            {id:1234,
+            name:"ball"});
+          then = info.id  it will create new id variable or storage.
         */
       }
 
@@ -34,6 +37,13 @@
 
     // this extend the parent class which is product 
     class inherentProduct extends product{
+
+      constructor(info1){
+        super(info1);
+        this.price = info1.price;
+        this.color = info1.color;
+
+      }
   
 
     }
@@ -45,7 +55,7 @@
     )
 
     console.log(product1);
-    console.log(color.color);
+    console.log(color);
 
 
   </script>
