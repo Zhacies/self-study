@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // setup a class first likt this 
+    class product{
+      // then put some product information like object slight diff
+      id;  
+      image;
+      name;
+      price;
+      //instead of ':' use semicolon
+
+      
+    }
+    const product1  = new product(
+      {id:1234,
+       name:"ball"}
+    );
+
+    // this extend the parent class which is product 
+    class inherentProduct extends product{
+  
+
+    }
+    const color = new inherentProduct(
+      {
+        color: 'blue',
+        price: 100
+      }
+    )
+
+    console.log(product1);
+    console.log(color);
+
+
+  </script>
+</body>
+
+</html>
