@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // setup a class first likt this 
+    class product{
+      // then put some product information like object slight diff
+      id; 
+      image;
+      name;
+      price;
+      //instead of ':' use semicolon
+
+      constructor(info){
+        this.id = info.id; // will get the id outside of constructor
+        this.name = info.name; // same here 
+
+        /* this.id came from  
+          const product1  = new product(
+            {id:1234,
+            name:"ball"});
+          then = info.id  it will create new id variable or storage.
+        */
+      }
+
+    }
+    const product1  = new product(
+      {id:1234,
+       name:"ball"}
+    );
+
+    // this extend the parent class which is product 
+    class inherentProduct extends product{
+
+      constructor(info1){
+        super(info1);
+        this.price = info1.price;
+        this.color = info1.color;
+
+      }
+  
+
+    }
+    const color = new inherentProduct(
+      {
+        color: 'blue',
+        price: 100
+      }
+    )
+
+    console.log(product1);
+    console.log(color);
+
+
+  </script>
+</body>
+
+</html>
