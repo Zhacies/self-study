@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+    <link rel="stylesheet" href="react.css">
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src = "https://unpkg.com/supersimpledev/dayjs.js"> </script>
+    
+    <script type="text/babel">// translate jsx to javascript
+     
+  
+      const container = document.querySelector('.js-container');
+      //reactDom.createRoot() is a method came from react
+      const root = ReactDOM.createRoot(container);
+    
+      
+      setInterval(() => {
+       const hey = 
+       <div className = "flex">
+        <p className="design">{ dayjs().format('HH:mm:ss')}</p>
+       </div>;
+       root.render(hey)
+      }, 1000);
+
+    </script>
+  </body>
+</html>

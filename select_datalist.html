@@ -10,16 +10,22 @@
 
   </div>
 
+
+
+  
   <script>
 const selectElement = document.querySelector('.container');
 
-function render(){
+
 let hello = '';
 const hey = [{
   fruit: 'apple',
   fruit2: 'banana',
   fruit3: 'watermelon'
 }];
+
+
+function render(){
 
 hey.forEach(element => {
   hello += `  
@@ -32,10 +38,10 @@ hey.forEach(element => {
 <input list="fruits" id="fruit" name="fruit">
 
 <datalist id="fruits">
-  <option value="Apple">
-  <option value="Banana">
+  <option value="${element.fruit}">
+  <option value="${element.fruit2}">
   <option value="Mango">
-  <option value="Watermelon">
+  <option value="${element.fruit3}">
 </datalist>
 `
 console.log(element.fruit);
