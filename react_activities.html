@@ -20,28 +20,31 @@
         <ProductDetails 
         name="Cotton Socks"
         price = "$10.90"
+        discount = "$5.45"
         /> 
 
         <ProductDetails 
         name="Tennis Balls"
         price = "$6.00"
+        
         /> 
 
         <ProductDetails 
         name="Plain T-shirt"
         price = "$7.99"
+        
         /> 
       </>
       );
      }
-     function ProductDetails({name,price}){
+     function ProductDetails({name,price,discount}){
 
       return(
         <> 
-          <p>{name}</p>
-       
-          <p>Price: {price}</p>
-        
+          <p> {name}</p>
+          {!discount && (<p>Price: ${price}</p>)}
+          {discount && (<del><p>Price: {price}</p></del>)}
+          {discount && (<p>discount Price:{discount}</p>)}
           <button>Add to Cart</button>
    
         </>);
