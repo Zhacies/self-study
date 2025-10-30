@@ -16,26 +16,37 @@
      
      function App(){
         return (
-        <> 
-          <p>hello welcome to my website</p>
-          <LoginForm/>
-        </>);
+      <>
+        <ProductDetails 
+        name="Cotton Socks"
+        price = "$10.90"
+        /> 
+
+        <ProductDetails 
+        name="Tennis Balls"
+        price = "$6.00"
+        /> 
+
+        <ProductDetails 
+        name="Plain T-shirt"
+        price = "$7.99"
+        /> 
+      </>
+      );
      }
-     function LoginForm(){
+     function ProductDetails({name,price}){
 
       return(
         <> 
-          <div>
-          <input placeholder="Email"/>
-          </div>
-          <div>
-          <input placeholder="Password" type="Password"/>
-          </div>
-          <button>Login</button>
-          <button>Sign Up</button>
+          <p>{name}</p>
+       
+          <p>Price: {price}</p>
+        
+          <button>Add to Cart</button>
+   
         </>);
      }
-  
+
 
 
       const container = document.querySelector('.js-container');
