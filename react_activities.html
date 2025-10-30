@@ -21,32 +21,34 @@
         name="Cotton Socks"
         price = "$10.90"
         discount = "$5.45"
+        imgsrc = "cotton-socks.png"
         /> 
 
         <ProductDetails 
         name="Tennis Balls"
         price = "$6.00"
+        imgsrc = "tennis-balls.png"
         
         /> 
 
         <ProductDetails 
         name="Plain T-shirt"
         price = "$7.99"
-        
+        imgsrc = "plain-t-shirt.png"
+  
         /> 
       </>
       );
      }
-     function ProductDetails({name,price,discount}){
+     function ProductDetails({name,price,discount,imgsrc}){
 
       return(
         <> 
           <p> {name}</p>
-          {!discount && (<p>Price: ${price}</p>)}
-          {discount && (<del><p>Price: {price}</p></del>)}
+          <img src= {imgsrc} />
+          {discount? (<del><p>Price: {price}</p></del>):(<p>Price: {price}</p>)}
           {discount && (<p>discount Price:{discount}</p>)}
           <button>Add to Cart</button>
-   
         </>);
      }
 
@@ -56,6 +58,13 @@
       const root = ReactDOM.createRoot(container);
   
       root.render(<App/>)
+
+      /*
+      ternary operator 
+      const result = value? value1:value2 
+      if value is true then value1 will be print 'else' result of 
+      value2 
+      */
     </script>
   </body>
 </html>
